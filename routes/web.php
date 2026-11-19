@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\UserController;
 
 
+Route::post('/users', [UserController::class, 'store'])->name('users.store');
 Route::get('/', [CourseController::class, 'index']);
 // CRUD pro kurzy a účastníky (můžeš využít resource routy)
 Route::resource('courses', CourseController::class);
